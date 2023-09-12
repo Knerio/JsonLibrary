@@ -57,6 +57,7 @@ public class JsonSimple extends JsonElement {
 
     @Override
     public int getAsInt() {
+        if (!this.isInt()) throw new IllegalStateException("Not a Integer:" + this);
         try {
             return Integer.parseInt(this.value.toString());
         } catch (NumberFormatException e) {
@@ -66,6 +67,7 @@ public class JsonSimple extends JsonElement {
 
     @Override
     public float getAsFloat() {
+        if (!this.isFloat()) throw new IllegalStateException("Not a Json Float:" + this);
         try {
             return Float.parseFloat(this.value.toString());
         } catch (NumberFormatException e) {
@@ -75,6 +77,7 @@ public class JsonSimple extends JsonElement {
 
     @Override
     public double getAsDouble() {
+        if (!this.isDouble()) throw new IllegalStateException("Not a Json Double:" + this);
         try {
             return Double.parseDouble(this.value.toString());
         } catch (NumberFormatException e) {
@@ -84,6 +87,7 @@ public class JsonSimple extends JsonElement {
 
     @Override
     public long getAsLong() {
+        if (!this.isLong()) throw new IllegalStateException("Not a Json Long:" + this);
         try {
             return Long.parseLong(this.value.toString());
         } catch (NumberFormatException e) {
