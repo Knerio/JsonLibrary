@@ -52,7 +52,7 @@ public abstract class JsonElement {
 
     public JsonObject getAsJsonObject() {
         if (!this.isJsonObject()) {
-            throw new IllegalStateException("Not a Json Object:" + this);
+            throw new IllegalStateException("Not a Json Object:" + this.getClass().getSimpleName());
         }
 
         return (JsonObject) this;
@@ -64,7 +64,7 @@ public abstract class JsonElement {
 
     public JsonSimple getAsJsonSimple() {
         if (!this.isJsonSimple()) {
-            throw new IllegalStateException("Not a Json JsonSimple:" + this);
+            throw new IllegalStateException("Not a Json JsonSimple:" + this.getClass().getSimpleName());
         }
 
         return (JsonSimple) this;
