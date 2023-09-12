@@ -1,5 +1,6 @@
 package de.derioo.objects;
 
+import de.derioo.exceptions.InvalidJsonException;
 import de.derioo.exceptions.MalformedJsonExeption;
 import de.derioo.objects.jsonObjects.JsonArray;
 import de.derioo.objects.jsonObjects.JsonElement;
@@ -15,7 +16,11 @@ import java.util.*;
 public class JsonParser {
 
     public static JsonElement parseString(String json) {
-        return new JsonParser(json).get();
+        try {
+            return new JsonParser(json).get();
+        } catch (Exception e) {
+            throw new InvalidJsonException("'" + json +"' is not valid json");
+        }
     }
 
     private String json;
