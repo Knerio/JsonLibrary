@@ -66,7 +66,13 @@ public class JsonObject extends JsonElement {
 
     @Override
     public JsonElement copy() {
-        return null;
+        JsonObject o = new JsonObject();
+
+        for (String s : this.keySet()) {
+            o.add(s, this.get(s));
+        }
+
+        return o;
     }
 
 

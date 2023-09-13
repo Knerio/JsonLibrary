@@ -37,7 +37,9 @@ public abstract class JsonElement {
 
     public abstract JsonElement copy();
 
-    public abstract Set<String> keySet();
+    public Set<String> keySet() {
+        throw new IllegalStateException("Not a supported Operation of: " + this.getClass().getSimpleName());
+    }
 
     public String toString() {
         if (this.isJsonSimple()) return this.getAsJsonSimple().toString();
