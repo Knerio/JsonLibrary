@@ -11,7 +11,7 @@ To use the Library you have to install it via a Repository and a Dependency
 # Repository
   ```xml
   <repository>
-    <id>jsonLibrary</id>
+    <id>JsonLibrary</id>
     <url>https://nexus.derioo.de/nexus/content/repositories/JsonLibrary</url>
   </repository>
 ```
