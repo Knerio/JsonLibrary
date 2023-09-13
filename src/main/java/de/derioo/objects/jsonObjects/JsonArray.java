@@ -1,8 +1,12 @@
 package de.derioo.objects.jsonObjects;
 
-import java.util.*;
+import org.jetbrains.annotations.NotNull;
 
-public class JsonArray extends JsonElement {
+import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.Collectors;
+
+public class JsonArray extends JsonElement implements Iterable<JsonElement>{
 
     private int size;
     private final List<JsonElement> elements;
@@ -44,25 +48,48 @@ public class JsonArray extends JsonElement {
     @Override
     public String toString() {
         return "[" +
-                String.join(",", this.getArrayAsSet()) +
+                this.asSet().stream().map(JsonElement::toString).collect(Collectors.joining(",")) +
                 "]";
     }
 
-    private Set<String> getArrayAsSet() {
-        Set<String> set = new HashSet<>();
-        for (JsonElement element : this.elements) {
-            set.add(element.toString());
-        }
-        return set;
+    public Set<JsonElement> asSet() {
+        return new HashSet<>(this.elements);
     }
 
     @Override
     public JsonElement copy() {
-        return null;
+        JsonArray clone = new JsonArray();
+
+        for (JsonElement jsonElement : this.asSet()) {
+            clone.add(jsonElement);
+        }
+
+        return clone;
     }
 
+
+
+    @NotNull
     @Override
-    public Set<String> keySet() {
-        return null;
+    public Iterator<JsonElement> iterator() {
+        JsonElement[] set = this.asSet().toArray(new JsonElement[]{});
+        AtomicInteger currentIndex = new AtomicInteger(0);
+        return new Iterator<>() {
+            @Override
+            public boolean hasNext() {
+                return currentIndex.get() < set.length;
+            }
+
+            @Override
+            public JsonElement next() {
+                JsonElement element = set[currentIndex.get()];
+                currentIndex.set(currentIndex.get() + 1);
+                return element;
+            }
+
+
+
+
+        };
     }
 }
