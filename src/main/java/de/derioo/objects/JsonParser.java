@@ -1,16 +1,12 @@
 package de.derioo.objects;
 
 import de.derioo.exceptions.InvalidJsonException;
-import de.derioo.exceptions.MalformedJsonExeption;
 import de.derioo.objects.jsonObjects.JsonArray;
 import de.derioo.objects.jsonObjects.JsonElement;
 import de.derioo.objects.jsonObjects.JsonObject;
 import de.derioo.objects.jsonObjects.JsonSimple;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
-import javax.naming.spi.DirObjectFactory;
-import java.nio.charset.MalformedInputException;
 import java.util.*;
 
 public class JsonParser {
@@ -97,15 +93,7 @@ public class JsonParser {
                 String substring = json.substring(0, x);
                 splits.add(substring);
             }
-            if (i == filteredSet.size() - 1) {
-                String substring = json.substring(x + 1 );
-                splits.add(substring);
-            }
-
-            if (i != 0) {
-                String substring = json.substring((Integer) filteredSet.toArray()[i - 1] + 1, x + 1);
-                splits.add(substring);
-            }
+            addSplits(json, filteredSet, splits, i, x);
 
         }
 
@@ -156,6 +144,18 @@ public class JsonParser {
         return object;
     }
 
+    private void addSplits(String json, Set<Integer> filteredSet, List<String> splits, int i, int x) {
+        if (i == filteredSet.size() - 1) {
+            String substring = json.substring(x + 1 );
+            splits.add(substring);
+        }
+
+        if (i != 0) {
+            String substring = json.substring((Integer) filteredSet.toArray()[i - 1] + 1, x + 1);
+            splits.add(substring);
+        }
+    }
+
     private JsonElement handleArray(String json) {
         JsonArray array = new JsonArray();
 
@@ -189,15 +189,7 @@ public class JsonParser {
                 String substring = json.substring(0, x - 1);
                 splits.add(substring);
             }
-            if (i == filteredSet.size() - 1) {
-                String substring = json.substring(x + 1 );
-                splits.add(substring);
-            }
-
-            if (i != 0) {
-                String substring = json.substring((Integer) filteredSet.toArray()[i - 1] + 1, x + 1);
-                splits.add(substring);
-            }
+            addSplits(json, filteredSet, splits, i, x);
 
         }
 
