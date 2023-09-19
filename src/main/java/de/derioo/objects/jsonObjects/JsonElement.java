@@ -41,6 +41,10 @@ public abstract class JsonElement {
         throw new IllegalStateException("Not a supported Operation of: " + this.getClass().getSimpleName());
     }
 
+    public boolean contains(String key) {
+        throw new IllegalStateException("Not a supported Operation of: " + this.getClass().getSimpleName());
+    }
+
     public String toString() {
         if (this.isJsonSimple()) return this.getAsJsonSimple().toString();
         if (this.isJsonArray()) return this.getAsJsonArray().toString();

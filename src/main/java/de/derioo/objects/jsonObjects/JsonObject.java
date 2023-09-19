@@ -75,5 +75,8 @@ public class JsonObject extends JsonElement {
         return o;
     }
 
-
+    @Override
+    public boolean contains(String key) {
+        return entries.containsKey(key);
+    }
 }
