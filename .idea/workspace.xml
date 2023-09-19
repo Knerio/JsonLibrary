@@ -4,27 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b5ac9588-4852-4108-bf58-5c8a05a52f55" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/derioo/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/derioo/exceptions/InvalidJsonException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/derioo/exceptions/MalformedJsonExeption.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/derioo/objects/JsonParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/derioo/objects/JsonWriter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/derioo/objects/jsonObjects/JsonArray.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/derioo/objects/jsonObjects/JsonElement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/derioo/objects/jsonObjects/JsonObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/derioo/objects/jsonObjects/JsonSimple.java" afterDir="false" />
+    <list default="true" id="b5ac9588-4852-4108-bf58-5c8a05a52f55" name="Changes" comment="extracted a method">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/derioo/exceptions/InvalidJsonException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/derioo/exceptions/InvalidJsonException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/derioo/objects/JsonParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/derioo/objects/JsonParser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +37,9 @@
   <component name="MacroExpansionManager">
     <option name="directoryName" value="8skwxwtj" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="2VDK4JMIouYCInxk2cU9ICUUEC2" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -70,10 +56,30 @@
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="gradle build" />
+      <command value="gradle clean" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.JsonParser">
+    <configuration name="JsonParser" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="de.derioo.objects.JsonParser" />
+      <module name="JsonLibrary.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.derioo.objects.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="de.derioo.Main" />
       <module name="JsonLibary.main" />
@@ -87,8 +93,55 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="JsonLibary [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
+      <method v="2" />
+    </configuration>
+    <configuration name="JsonLibary [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.JsonParser" />
+        <item itemvalue="Gradle.JsonLibary [clean]" />
+        <item itemvalue="Gradle.JsonLibary [build]" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -103,11 +156,118 @@
       <updated>1694365019797</updated>
       <workItem from="1694365021874" duration="1000" />
       <workItem from="1694448295397" duration="7785000" />
-      <workItem from="1694520229563" duration="9371000" />
+      <workItem from="1694520229563" duration="12734000" />
+      <workItem from="1694610494882" duration="1023000" />
+      <workItem from="1694621338639" duration="1973000" />
     </task>
+    <task id="LOCAL-00001" summary="init">
+      <option name="closed" value="true" />
+      <created>1694539643356</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1694539643356</updated>
+    </task>
+    <task id="LOCAL-00002" summary="added license">
+      <option name="closed" value="true" />
+      <created>1694539749672</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1694539749672</updated>
+    </task>
+    <task id="LOCAL-00003" summary="added the InvalidJsonException">
+      <option name="closed" value="true" />
+      <created>1694539992563</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1694539992563</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added checks to json Simple">
+      <option name="closed" value="true" />
+      <created>1694543346758</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1694543346758</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Added this.getClass().getSimpleName() to some errors">
+      <option name="closed" value="true" />
+      <created>1694543363650</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1694543363650</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Deleted not used file">
+      <option name="closed" value="true" />
+      <created>1694543371434</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1694543371434</updated>
+    </task>
+    <task id="LOCAL-00007" summary="added clone methods">
+      <option name="closed" value="true" />
+      <created>1694611207583</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1694611207583</updated>
+    </task>
+    <task id="LOCAL-00008" summary="added iterator">
+      <option name="closed" value="true" />
+      <created>1694611224750</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1694611224750</updated>
+    </task>
+    <task id="LOCAL-00009" summary="update readme">
+      <option name="closed" value="true" />
+      <created>1694621369625</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1694621369625</updated>
+    </task>
+    <task id="LOCAL-00010" summary="extracted a method">
+      <option name="closed" value="true" />
+      <created>1694621386874</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1694621386874</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init" />
+    <MESSAGE value="added license" />
+    <MESSAGE value="added the InvalidJsonException" />
+    <MESSAGE value="Added checks to json Simple" />
+    <MESSAGE value="Added this.getClass().getSimpleName() to some errors" />
+    <MESSAGE value="Deleted not used file" />
+    <MESSAGE value="added clone methods" />
+    <MESSAGE value="added iterator" />
+    <MESSAGE value="update readme" />
+    <MESSAGE value="extracted a method" />
+    <option name="LAST_COMMIT_MESSAGE" value="extracted a method" />
   </component>
 </project>

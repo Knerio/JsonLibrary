@@ -20,7 +20,7 @@ public class JsonSimple extends JsonElement {
 
     @Override
     public String toString() {
-        if (!this.isDouble() && !this.isFloat() && !this.isInt() && !this.isLong())
+        if (!this.isDouble() && !this.isFloat() && !this.isInt() && !this.isLong() && !this.isBoolean())
             return "\"" + this.value.toString() + "\"";
         return this.value.toString();
     }
@@ -28,6 +28,10 @@ public class JsonSimple extends JsonElement {
     @Override
     public boolean getAsBoolean() {
         return Boolean.parseBoolean(this.value.toString());
+    }
+
+    public boolean isBoolean() {
+        return this.value.toString().equals("true") || this.value.toString().equals("false");
     }
 
     @Override
