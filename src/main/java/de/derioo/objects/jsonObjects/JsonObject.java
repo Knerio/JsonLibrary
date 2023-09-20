@@ -29,6 +29,26 @@ public class JsonObject extends JsonElement {
         this.entries.put(key, value == null ? null : new JsonSimple(value));
     }
 
+    public void addProperty(String key, int value) {
+        this.entries.put(key, new JsonSimple(value));
+    }
+
+    public void addProperty(String key, double value) {
+        this.entries.put(key, new JsonSimple(value));
+    }
+
+    public void addProperty(String key, long value) {
+        this.entries.put(key, new JsonSimple(value));
+    }
+
+    public void addProperty(String key, float value) {
+        this.entries.put(key, new JsonSimple(value));
+    }
+
+    public void addProperty(String key, Object value) {
+        this.entries.put(key, new JsonSimple(value));
+    }
+
 
     @Override
     public Set<String> keySet() {
