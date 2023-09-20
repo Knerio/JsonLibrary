@@ -69,17 +69,8 @@ public class JsonObject extends JsonElement {
     private Set<String> getObjectsAsSet() {
         Set<String> set = new HashSet<>();
         for (String s : this.entries.keySet()) {
-            StringBuilder builder = new StringBuilder();
-            builder.append("\"").append(s).append("\":");
-            if (this.isJsonSimple()) {
-                builder.append("\"");
-                builder.append(this.get(s).toString());
-                builder.append("\"");
-            } else {
-                builder.append(this.get(s).toString());
-            }
-
-            set.add(builder.toString());
+            String string = "\"" + s + "\":" + this.get(s).toString();
+            set.add(string);
         }
         return set;
     }
