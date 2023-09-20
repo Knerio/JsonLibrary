@@ -135,7 +135,7 @@ public class JsonParser {
                 }
 
                 if (value.startsWith("[")) {
-                    object.add(key, this.handleArray(value.substring(0, substring.length() - 1)));
+                    object.add(key, this.handleArray(value.substring(0, substring.length())));
                     continue;
                 }
 
@@ -204,10 +204,7 @@ public class JsonParser {
             for (String split : splits) {
 
 
-                String substring = split.substring(1);
-
-                String value = substring.startsWith("{") || substring.startsWith("[") ? substring : this.replaceLast(substring.replaceFirst("\"", ""), "\"", "");
-
+                String value = split.startsWith("{") || split.startsWith("[") ? split : this.replaceLast(split.replaceFirst("\"", ""), "\"", "");
 
                 if (value.startsWith("{")) {
                     array.add(this.handleObject(value));
@@ -255,9 +252,13 @@ public class JsonParser {
             boolean opened = false;
             for (int j = 0; j < completeContent.split("").length; j++) {
                 String at = String.valueOf(completeContent.charAt(j));
-                if (at.equals("\"") || at.equals("[") || at.equals("]") || at.equals("{") || at.equals("}")) {
+                if (at.equals("\"")) {
                     opened = !opened;
                 }
+
+                if (!opened && (at.equals("{") || at.equals("[")))opened = true;
+
+                if (opened && (at.equals("]") || at.equals("}"))) opened = false;
                 if (i == j) {
                     if (opened) {
                         finalList.remove(i);
