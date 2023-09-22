@@ -22,6 +22,6 @@ To use the Library you have to install it via a Repository and a Dependency
 <dependency>
   <groupId>de.derioo</groupId>
   <artifactId>JsonLibrary</artifactId>
-  <version>1.4-RELEASE</version>
+  <version>1.5-RELEASE</version>
 </dependency>
 ```
