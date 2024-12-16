@@ -11,8 +11,9 @@ To use the Library you have to install it via a Repository and a Dependency
 # Repository
   ```xml
   <repository>
-    <id>JsonLibrary</id>
-    <url>https://nexus.derioo.de/nexus/content/repositories/JsonLibrary</url>
+    <id>reposilite-repository-releases</id>
+    <name>Reposilite Repository</name>
+    <url>https://repo.derioo.de/releases</url>
   </repository>
 ```
 #
@@ -22,6 +23,6 @@ To use the Library you have to install it via a Repository and a Dependency
 <dependency>
   <groupId>de.derioo</groupId>
   <artifactId>JsonLibrary</artifactId>
-  <version>1.5-RELEASE</version>
+  <version>1.0-SNAPSHOT</version>
 </dependency>
 ```
