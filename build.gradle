@@ -16,3 +16,33 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
+tasks.register('sourcesJar', Jar) {
+    archiveClassifier = 'sources'
+    from sourceSets.main.allJava
+}
+
+publishing {
+    repositories {
+        maven {
+            name = "Reposilite"
+            url = uri((System.getenv("REPOSILITE_URL") ?: "default").toString())
+            credentials {
+                username = System.getenv("REPOSILITE_USER")
+                password = System.getenv("REPOSILITE_TOKEN")
+            }
+        }
+    }
+    publications {
+        register("gpr", MavenPublication) {
+            groupId = group
+            version = version
+            artifact jar // Use the regular jar task
+            artifact sourcesJar // Include sourcesJar
+        }
+    }
+}
+
+tasks.named("publishGprPublicationToReposiliteRepository") {
+    dependsOn tasks.named("jar")
+}
